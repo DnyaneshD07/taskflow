@@ -1,0 +1,15 @@
+com\taskflow\domain\entity\Resource.class
+com\taskflow\domain\enums\ResourceType.class
+com\taskflow\domain\enums\TaskStatus.class
+com\taskflow\security\jwt\JwtTokenProvider.class
+com\taskflow\domain\entity\Role.class
+com\taskflow\strategy\TaskAssignmentStrategy.class
+com\taskflow\concurrency\AssignmentSweepScheduler.class
+com\taskflow\domain\entity\AssignmentHistory.class
+com\taskflow\domain\enums\TaskPriority.class
+com\taskflow\dto\response\AuthResponse.class
+com\taskflow\domain\entity\User.class
+com\taskflow\domain\entity\Task.class
+com\taskflow\domain\enums\TaskType.class
+com\taskflow\strategy\LeastLoadedStrategy.class
+com\taskflow\domain\entity\AbstractTask.class
