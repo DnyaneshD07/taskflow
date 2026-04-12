@@ -1,5 +1,15 @@
 # ⚡ TaskFlow – Real-Time Distributed Task & Resource Management System
 
+:
+
+🚀 About TaskFlow
+
+TaskFlow is a modern, scalable task management application designed to streamline productivity through an intuitive and efficient workflow system. Built with a focus on performance, usability, and clean architecture, TaskFlow enables users to organize, prioritize, and track tasks seamlessly in real time.
+
+The application implements a structured task lifecycle with features such as task creation, status tracking, prioritization, and dynamic updates, ensuring users can manage both simple to complex workflows efficiently. It is designed with modular components and optimized state management, making it highly maintainable and extensible for future enhancements.
+
+From a technical perspective, TaskFlow emphasizes clean code practices, responsive UI/UX, and robust backend integration, showcasing strong fundamentals in full-stack development. The project demonstrates the ability to design scalable systems, handle real-world use cases, and build production-ready applications.
+
 A production-grade, concurrent, backend-heavy system built with **Java 17 + Spring Boot + React**.
 
 ---
