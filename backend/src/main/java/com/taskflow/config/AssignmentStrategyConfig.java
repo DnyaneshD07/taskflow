@@ -13,6 +13,7 @@ import java.util.Map;
 public class AssignmentStrategyConfig {
 
     @Bean
+    @org.springframework.context.annotation.Primary
     public TaskAssignmentStrategy taskAssignmentStrategy(
         @Value("${taskflow.assignment.strategy:LEAST_LOADED}") String strategyName,
         Map<String, TaskAssignmentStrategy> strategies

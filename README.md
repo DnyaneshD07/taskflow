@@ -127,44 +127,35 @@ TaskAssignmentStrategy (Interface)
 
 ## Running Locally
 
-### Option A – Docker Compose (recommended)
-```bash
-git clone <repo>
-cd taskflow
+🚀 **Zero Database Setup Needed!**
+The project runs entirely using an embedded **H2 in-memory database**. There is absolutely no need to install or run MySQL/Docker to develop locally! 
 
-# Start everything (MySQL + backend + frontend)
-docker-compose up --build
-
-# App available at:
-# Frontend  → http://localhost:3000
-# API       → http://localhost:8080/api
-```
-
-### Option B – Manual
-**Prerequisites:** Java 17, Maven, Node 20, MySQL 8
+**Prerequisites:** Java 17, Maven, Node 20+
 
 ```bash
-# 1. Create database
-mysql -u root -p -e "CREATE DATABASE taskflow; CREATE USER 'taskflow'@'localhost' IDENTIFIED BY 'secret'; GRANT ALL ON taskflow.* TO 'taskflow'@'localhost';"
-
-# 2. Start backend
+# 1. Start backend
 cd taskflow/backend
 mvn spring-boot:run
+# → API goes live at http://localhost:8080/api
 
-# 3. Start frontend
+# 2. Start frontend
 cd taskflow/frontend
 npm install
 npm run dev
-# → http://localhost:3000
+# → UI goes live at http://localhost:3000
+```
+
+*(Note: Data is automatically seeded on startup using `data.sql` and resets when the backend stops.)*
+
+### Option B – Docker Compose
+If you prefer running everything together with a standard persistent MySQL database:
+```bash
+docker-compose up --build
 ```
 
 ### Environment Variables
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `DB_HOST` | `localhost` | MySQL host |
-| `DB_NAME` | `taskflow` | Database name |
-| `DB_USER` | `root` | DB username |
-| `DB_PASS` | `secret` | DB password |
 | `JWT_SECRET` | (see yml) | 32+ char secret |
 | `TASKFLOW_ASSIGNMENT_STRATEGY` | `LEAST_LOADED` | `LEAST_LOADED \| ROUND_ROBIN \| PRIORITY_BASED` |
 

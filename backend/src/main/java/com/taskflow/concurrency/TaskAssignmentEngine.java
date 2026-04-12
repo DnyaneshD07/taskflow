@@ -111,9 +111,9 @@ public class TaskAssignmentEngine {
         );
 
         running = true;
-        consumerThread = Thread.ofVirtual()          // Java 21 virtual thread for the consumer
-                .name("assignment-consumer")
-                .start(this::consumeLoop);
+        consumerThread = new Thread(this::consumeLoop);
+        consumerThread.setName("assignment-consumer");
+        consumerThread.start();
 
         log.info("TaskAssignmentEngine started – pool [{}/{}], queue cap {}",
             corePoolSize, maxPoolSize, queueCapacity);
